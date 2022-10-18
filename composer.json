@@ -1,0 +1,31 @@
+{
+    "name": "vadgab/yii2-unas-api",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "unas", "api"],
+    "license": "MIT",
+    "support": {
+    },
+    "authors": [
+        {
+            "name": "Vadász Gábor",
+            "email": "gabor.vadasz@allstar.hu"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "vadgab\\yii2-unas-api\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://github.com/vadgab/yii2-unas-api"
+        }
+    ],
+    "require-dev": {
+    }
+}
