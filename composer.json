@@ -2,12 +2,13 @@
     "name": "vadgab/yii2-unas-api",
     "type": "yii2-extension",
     "keywords": ["yii2", "unas", "api"],
+    "description": "The application is a YII2-Extension for the UNAS Web Store API",
     "license": "MIT",
     "support": {
     },
     "authors": [
         {
-            "name": "Vadász Gábor",
+            "name": "Gábor Vadász",
             "email": "gabor.vadasz@allstar.hu"
         }
     ],
@@ -23,7 +24,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://github.com/vadgab/yii2-unas-api"
+            "url": "https://repo.packagist.org"
         }
     ],
     "require-dev": {
