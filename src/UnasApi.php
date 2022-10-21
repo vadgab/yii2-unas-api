@@ -1,6 +1,6 @@
 <?php
 
-namespace vadgab\UnasApi;
+namespace vadgab\Yii2UnasApi;
 
 
 
