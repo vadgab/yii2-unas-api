@@ -18,8 +18,11 @@
     },
     "autoload": {
         "psr-4": {
-            "vadgab\\yii2-unas-api\\": "src"
-        }
+            "vadgab\\UnasApi\\": "src"
+        },
+	  "classmap": [
+      	"src/"
+	  ]	
     },
     "repositories": [
         {
