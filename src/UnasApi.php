@@ -2,6 +2,8 @@
 
 namespace vadgab\Yii2UnasApi;
 
+use vadgab\Yii2UnasApi\UnasOrders;
+
 
 
 class UnasApi
@@ -44,6 +46,13 @@ class UnasApi
                         <ApiKey>'.$this->apikey.'</ApiKey>
                     </Params>';
         $result = $this->call($request);
+        return $result;
+
+    }
+
+    public function getOrders($schema){
+
+        $result = $this->call($schema);
         return $result;
 
     }
