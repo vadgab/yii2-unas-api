@@ -53,7 +53,7 @@ For example, if you need to download and save a file the class may look like the
     $result = $apicall->setOrders($schemaXml);
     var_dump($result);
 
-	// Full avaiable variables: https://unas.hu/tudastar/api/megrendelesek-getOrder-keres 	
+	// Full avaiable variables: https://unas.hu/tudastar/api/megrendelesek-adatszerkezet
 
 ```
 
