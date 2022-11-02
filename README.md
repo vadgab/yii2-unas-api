@@ -21,8 +21,7 @@ composer require --prefer-dist vadgab/yii2-unas-api
 Basic Usage
 -----------
 
-Each task which is sent to queue should be defined as a separate class.
-For example, if you need to download and save a file the class may look like the following:
+General use can be tried through the following examples:
 
 - Get Orders
 
