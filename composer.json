@@ -18,12 +18,8 @@
     },
     "autoload": {
         "psr-4": {
-            "vadgab\\UnasApi\\": "src", 
-		"vadgab\\UnasApi\\UnasOrdersSchema\\": "schema",
+            "vadgab\\UnasApi\\": "src"
         },
-	  "classmap": [
-      	"src/"
-	  ]	
     },
     "repositories": [
         {
