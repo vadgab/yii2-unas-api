@@ -27,6 +27,10 @@ For example, if you need to download and save a file the class may look like the
 - Get Orders
 
 ```php
+
+    use vadgab\Yii2UnasApi\UnasApi;
+    use vadgab\Yii2UnasApi\UnasOrders\UnasOrdersSchema;
+
     $apicall = new UnasApi('*apikey*');
     $schema = new UnasOrdersSchema($apicall);
     $schema->DateStart = '2022-10-01';
@@ -43,6 +47,10 @@ For example, if you need to download and save a file the class may look like the
 - Set Orders
 
 ```php
+
+    use vadgab\Yii2UnasApi\UnasApi;
+    use vadgab\Yii2UnasApi\UnasOrders\UnasOrdersSchema;
+
     $apicall = new UnasApi('*apikey*');
     $schema = new UnasOrdersSchema($apicall);
     $schema->setOrderParams['Key']  = '32117-869609';
