@@ -19,7 +19,7 @@
     "autoload": {
         "psr-4": {
             "vadgab\\Yii2UnasApi\\": "src",
-		"vadgab\\Yii2UnasApi\\UnasOrders\\": "src"
+		"vadgab\\Yii2UnasApi\\UnasOrders\\": "src/schema"
         }
     },
     "classmap" : [
