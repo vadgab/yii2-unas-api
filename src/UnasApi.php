@@ -2,15 +2,19 @@
 
 namespace vadgab\Yii2UnasApi;
 
-use vadgab\Yii2UnasApi\UnasOrders;
+
+use vadgab\Yii2UnasApi\UnasOrders\UnasOrdersSchema;
 
 
 
 class UnasApi
 {
-    private $apikey;
+    public $apikey;
+    public $Token;
     const URL_MAIN = "https://api.unas.eu/shop/";
     const LOGIN_PREFIX = "login";
+    const GET_ORDER_PREFIX = "getOrder";
+    const SET_ORDER_PREFIX = "setOrder";
 
 
     public function __construct($apikey)
@@ -19,18 +23,27 @@ class UnasApi
     }
 
 
-    public function call($request){
+    public function call($request,$prefix, $token = ""){
 
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_HEADER, false);
+
+        if($token){
+            $headers=array();
+            $headers[]="Authorization: Bearer ".$token;
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+        }else{
+            curl_setopt($curl, CURLOPT_HEADER, false);
+        }
         curl_setopt($curl, CURLOPT_POST, TRUE);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_URL, self::URL_MAIN.self::LOGIN_PREFIX);
+        curl_setopt($curl, CURLOPT_URL, self::URL_MAIN.$prefix);
         curl_setopt($curl, CURLOPT_POSTFIELDS,$request);
         try{
             $response = curl_exec($curl);
             $resultXML = simplexml_load_string($response);
             return $resultXML;
+
         } catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
@@ -45,17 +58,29 @@ class UnasApi
                     <Params>
                         <ApiKey>'.$this->apikey.'</ApiKey>
                     </Params>';
-        $result = $this->call($request);
+        $result = $this->call($request,self::LOGIN_PREFIX);
         return $result;
 
     }
 
     public function getOrders($schema){
 
-        $result = $this->call($schema);
+        $login = self::login();
+        $token_ = $login->Token;
+        $result = $this->call($schema,self::GET_ORDER_PREFIX,$login->Token);
         return $result;
 
     }
+
+    public function setOrders($schema){
+
+        $login = self::login();
+        $token_ = $login->Token;
+        $result = $this->call($schema,self::SET_ORDER_PREFIX,$login->Token);
+        return $result;
+
+    }
+
 
 
 
