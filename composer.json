@@ -21,6 +21,9 @@
             "vadgab\\UnasApi\\": "src"
         }
     },
+    "classmap" : [
+        "src/"
+    ],	
     "repositories": [
         {
             "type": "composer",
