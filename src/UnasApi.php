@@ -41,7 +41,7 @@ class UnasApi
         curl_setopt($curl, CURLOPT_POSTFIELDS,$request);
         try{
             $response = curl_exec($curl);
-            $resultXML = simplexml_load_string($response);
+            $resultXML = simplexml_load_string($response,'SimpleXMLElement', LIBXML_NOCDATA);
             return $resultXML;
 
         } catch (Exception $e) {
